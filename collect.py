@@ -1,10 +1,10 @@
 """
 Road Pulse - collect.py
-Haalt nieuwe meldingen over wegen en stoepen op bij FixMyStreet (VK),
-analyseert het sentiment met een voorgetraind Hugging Face-model
-en voegt ze toe aan data/sentiment.csv.
+Fetches new reports about roads and pavements from FixMyStreet (UK),
+analyses their sentiment with a pre-trained Hugging Face model
+and appends them to data/sentiment.csv.
 
-Wordt elke 15 minuten gedraaid door GitHub Actions (.github/workflows/collect.yml).
+Run every 15 minutes by GitHub Actions (.github/workflows/collect.yml).
 """
 
 import csv
@@ -15,7 +15,7 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
-# ---------------------------------------------------------------- instellingen
+# ---------------------------------------------------------------- settings
 API_URL = "https://www.fixmystreet.com/open311/v2/requests.json"
 MODEL_NAME = "cardiffnlp/twitter-roberta-base-sentiment-latest"
 
@@ -23,26 +23,26 @@ DATA_DIR = "data"
 CSV_PATH = os.path.join(DATA_DIR, "sentiment.csv")
 STATE_PATH = os.path.join(DATA_DIR, "state.json")
 
-# Categorieen die over het wegdek / de stoep gaan (hoofdletters maken niet uit).
+# Categories about the road surface / pavement (case-insensitive).
 ROAD_PATTERN = re.compile(
     r"pothole|road surface|carriageway|pavement|footway|footpath|kerb|"
     r"tarmac|road defect|surface defect|crack|sunken|uneven",
     re.IGNORECASE,
 )
 
-FIRST_RUN_LOOKBACK_HOURS = 1   # bij de allereerste run: zoveel uur terug
-OVERLAP_HOURS = 2              # extra overlap, want de API negeert tijdzones
-MAX_GAP_HOURS = 12             # nooit verder terug dan dit (na een lange storing)
+FIRST_RUN_LOOKBACK_HOURS = 1   # first run only: look back this many hours
+OVERLAP_HOURS = 2              # extra overlap, because the API ignores time zones
+MAX_GAP_HOURS = 12             # never look back further than this (after a long outage)
 
 FIELDS = [
     "id", "requested_at", "fetched_at", "category", "council",
     "text", "label", "score_neg", "score_neu", "score_pos", "sentiment",
 ]
-# Bewust NIET opgeslagen: naam melder (zit niet in de API), coordinaten
-# (lat/long kunnen naar iemands huis wijzen), foto's.
+# Deliberately NOT stored: reporter name (not in the API), coordinates
+# (lat/long can point to someone's home), photos.
 
 
-# ---------------------------------------------------------------- hulpfuncties
+# ---------------------------------------------------------------- helpers
 def load_state():
     if os.path.exists(STATE_PATH):
         with open(STATE_PATH) as f:
@@ -63,7 +63,7 @@ def known_ids():
 
 
 def fetch_window(start, end):
-    """Haal alle meldingen op tussen start en end, in blokken van 1 uur."""
+    """Fetch all reports between start and end, in 1-hour chunks."""
     items = []
     t = start
     while t < end:
@@ -90,7 +90,7 @@ def is_road_item(item):
 
 def clean_text(item):
     text = item.get("description") or item.get("detail") or item.get("title") or ""
-    return " ".join(text.split())  # enters/dubbele spaties weg
+    return " ".join(text.split())  # remove line breaks / double spaces
 
 
 def council_of(item):
@@ -107,18 +107,18 @@ def load_model():
 
 
 def analyse(clf, texts):
-    """Geeft per tekst een dict met kansen voor negative/neutral/positive."""
+    """Returns, per text, a dict with probabilities for negative/neutral/positive."""
     out = []
     results = clf(texts, truncation=True, max_length=512, batch_size=16)
     for res in results:
-        if isinstance(res, dict):  # oudere transformers-versies
+        if isinstance(res, dict):  # older transformers versions
             res = [res]
         scores = {d["label"].lower(): d["score"] for d in res}
         out.append(scores)
     return out
 
 
-# ---------------------------------------------------------------- hoofdprogramma
+# ---------------------------------------------------------------- main
 def main():
     os.makedirs(DATA_DIR, exist_ok=True)
     now = datetime.now(timezone.utc)
@@ -147,7 +147,7 @@ def main():
         batch_ids.add(sid)
         new_items.append((sid, item, text))
 
-    print(f"Opgehaald: {len(raw)} meldingen, nieuw over wegen/stoepen: {len(new_items)}")
+    print(f"Fetched: {len(raw)} reports, new road/pavement reports: {len(new_items)}")
 
     if new_items:
         clf = load_model()
@@ -173,14 +173,14 @@ def main():
                     "score_neg": round(neg, 4),
                     "score_neu": round(neu, 4),
                     "score_pos": round(pos, 4),
-                    # -1 = heel negatief, 0 = neutraal, +1 = heel positief
+                    # -1 = very negative, 0 = neutral, +1 = very positive
                     "sentiment": round(pos - neg, 4),
                 })
 
     state["last_run"] = now.isoformat(timespec="seconds")
     state["total_items"] = len(seen) + len(new_items)
     save_state(state)
-    print(f"Totaal in dataset: {state['total_items']}")
+    print(f"Total in dataset: {state['total_items']}")
 
 
 if __name__ == "__main__":
