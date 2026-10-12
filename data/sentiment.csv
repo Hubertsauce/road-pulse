@@ -918,3 +918,11 @@ id,requested_at,fetched_at,category,council,text,label,score_neg,score_neu,score
 10224114,2026-10-12T01:46:09+01:00,2026-10-12T00:48:13+00:00,Potholes / Highway Condition,West Northamptonshire Council,Pothole: Pothole,neutral,0.3217,0.5928,0.0855,-0.2363
 10224113,2026-10-12T01:45:19+01:00,2026-10-12T00:48:13+00:00,Potholes / Highway Condition,West Northamptonshire Council,Pothole: Pothole,neutral,0.3217,0.5928,0.0855,-0.2363
 10224112,2026-10-12T01:44:14+01:00,2026-10-12T00:48:13+00:00,Potholes / Highway Condition,West Northamptonshire Council,Pothole: Pothole on side of road,neutral,0.425,0.5503,0.0247,-0.4004
+10224126,2026-10-12T01:58:17+01:00,2026-10-12T00:58:23+00:00,Potholes / Highway Condition,West Northamptonshire Council,Underpass Road sinking: Sinking,negative,0.634,0.3472,0.0188,-0.6151
+10224124,2026-10-12T01:56:56+01:00,2026-10-12T00:58:23+00:00,Potholes / Highway Condition,West Northamptonshire Council,Top layer has come off: Top off,neutral,0.0082,0.9078,0.0841,0.0759
+10224123,2026-10-12T01:55:51+01:00,2026-10-12T00:58:23+00:00,Potholes / Highway Condition,West Northamptonshire Council,Lots of cracks: Lots,neutral,0.3954,0.4964,0.1082,-0.2872
+10224121,2026-10-12T01:54:51+01:00,2026-10-12T00:58:23+00:00,Potholes / Highway Condition,West Northamptonshire Council,Poor condition: Poor,negative,0.7256,0.2531,0.0213,-0.7043
+10224120,2026-10-12T01:54:11+01:00,2026-10-12T00:58:23+00:00,Potholes / Highway Condition,West Northamptonshire Council,Road sinking and cracking: Cracks,negative,0.7881,0.1934,0.0185,-0.7696
+10224118,2026-10-12T01:53:28+01:00,2026-10-12T00:58:23+00:00,Potholes / Highway Condition,West Northamptonshire Council,Severe undulation: Severe,neutral,0.1497,0.7955,0.0548,-0.095
+10224117,2026-10-12T01:52:49+01:00,2026-10-12T00:58:23+00:00,Potholes / Highway Condition,West Northamptonshire Council,Large pothole on entrance to Dryleys court: Large,negative,0.6287,0.3581,0.0132,-0.6155
+10224115,2026-10-12T01:48:51+01:00,2026-10-12T00:58:23+00:00,Potholes / Highway Condition,West Northamptonshire Council,Severe sinking: Severe,neutral,0.3252,0.6316,0.0432,-0.282
