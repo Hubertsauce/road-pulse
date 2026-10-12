@@ -964,3 +964,4 @@ id,requested_at,fetched_at,category,council,text,label,score_neg,score_neu,score
 10224169,2026-10-12T02:42:21+01:00,2026-10-12T01:49:19+00:00,Potholes / Highway Condition,West Northamptonshire Council,Pothole and cracking: Cracking and undulation,neutral,0.4285,0.5156,0.0559,-0.3726
 10224168,2026-10-12T02:40:59+01:00,2026-10-12T01:49:19+00:00,Potholes / Highway Condition,West Northamptonshire Council,Potholes: Cracked everywhere,negative,0.8154,0.1628,0.0219,-0.7935
 10224167,2026-10-12T02:40:05+01:00,2026-10-12T01:49:19+00:00,Potholes / Highway Condition,West Northamptonshire Council,"Cracking, undulation, and potholes: Potholes",negative,0.6776,0.2925,0.0299,-0.6477
+10224176,2026-10-12T03:35:55+01:00,2026-10-12T02:40:40+00:00,Pavement damage,Brent Council,274 stag lane / bus stop: Paving and road on Stag Lane has rutted and is in need of repair. This is dangerous for vehicles and buses who have to stop at the bus stop.,negative,0.8442,0.1455,0.0103,-0.8339
