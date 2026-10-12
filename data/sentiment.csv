@@ -957,3 +957,5 @@ id,requested_at,fetched_at,category,council,text,label,score_neg,score_neu,score
 10224156,2026-10-12T02:20:57+01:00,2026-10-12T01:28:55+00:00,Potholes / Highway Condition,West Northamptonshire Council,Minor pothole and crack: To watch,neutral,0.4725,0.4874,0.0401,-0.4323
 10224155,2026-10-12T02:19:56+01:00,2026-10-12T01:28:55+00:00,Potholes / Highway Condition,West Northamptonshire Council,Pipeworks sunk: Sunk causing undulation,negative,0.8511,0.1411,0.0077,-0.8434
 10224154,2026-10-12T02:18:53+01:00,2026-10-12T01:28:55+00:00,Potholes / Highway Condition,West Northamptonshire Council,Poor condition: Poor,negative,0.7256,0.2531,0.0213,-0.7043
+10224166,2026-10-12T02:38:42+01:00,2026-10-12T01:39:08+00:00,Potholes / Highway Condition,West Northamptonshire Council,Severe cracking: Severe,neutral,0.2462,0.6996,0.0543,-0.1919
+10224165,2026-10-12T02:33:33+01:00,2026-10-12T01:39:08+00:00,Potholes / Highway Condition,West Northamptonshire Council,Two large potholes: Large,neutral,0.4598,0.4951,0.0451,-0.4147
