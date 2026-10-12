@@ -959,3 +959,8 @@ id,requested_at,fetched_at,category,council,text,label,score_neg,score_neu,score
 10224154,2026-10-12T02:18:53+01:00,2026-10-12T01:28:55+00:00,Potholes / Highway Condition,West Northamptonshire Council,Poor condition: Poor,negative,0.7256,0.2531,0.0213,-0.7043
 10224166,2026-10-12T02:38:42+01:00,2026-10-12T01:39:08+00:00,Potholes / Highway Condition,West Northamptonshire Council,Severe cracking: Severe,neutral,0.2462,0.6996,0.0543,-0.1919
 10224165,2026-10-12T02:33:33+01:00,2026-10-12T01:39:08+00:00,Potholes / Highway Condition,West Northamptonshire Council,Two large potholes: Large,neutral,0.4598,0.4951,0.0451,-0.4147
+10224171,2026-10-12T02:44:40+01:00,2026-10-12T01:49:19+00:00,Potholes / Highway Condition,West Northamptonshire Council,Large crack and associated potholes: Large crack and long pothole in what appears to be recently reinstated,neutral,0.4114,0.5682,0.0204,-0.391
+10224170,2026-10-12T02:43:04+01:00,2026-10-12T01:49:19+00:00,Potholes / Highway Condition,West Northamptonshire Council,Crack width of road: Large crack,neutral,0.081,0.8529,0.0661,-0.0148
+10224169,2026-10-12T02:42:21+01:00,2026-10-12T01:49:19+00:00,Potholes / Highway Condition,West Northamptonshire Council,Pothole and cracking: Cracking and undulation,neutral,0.4285,0.5156,0.0559,-0.3726
+10224168,2026-10-12T02:40:59+01:00,2026-10-12T01:49:19+00:00,Potholes / Highway Condition,West Northamptonshire Council,Potholes: Cracked everywhere,negative,0.8154,0.1628,0.0219,-0.7935
+10224167,2026-10-12T02:40:05+01:00,2026-10-12T01:49:19+00:00,Potholes / Highway Condition,West Northamptonshire Council,"Cracking, undulation, and potholes: Potholes",negative,0.6776,0.2925,0.0299,-0.6477
