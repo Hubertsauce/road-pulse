@@ -4224,3 +4224,4 @@ id,requested_at,fetched_at,category,council,text,label,score_neg,score_neu,score
 10245000,2026-10-16T01:27:32+01:00,2026-10-16T00:29:48+00:00,Pothole on road/cycleway,Lincolnshire County Council,On the road opposite Minden House: Pothole and road deterioration,negative,0.7534,0.2342,0.0123,-0.7411
 10244998,2026-10-16T01:23:59+01:00,2026-10-16T00:29:48+00:00,Pothole on road/cycleway,Lincolnshire County Council,Out side the drive of Coach House Farm: Pothole,neutral,0.4848,0.5006,0.0146,-0.4702
 10245003,2026-10-16T01:32:26+01:00,2026-10-16T00:40:00+00:00,Pothole on road/cycleway,Lincolnshire County Council,Pothole outside 5 Northend Close on Long Street: Pothole,neutral,0.4434,0.5367,0.0199,-0.4234
+10245005,2026-10-16T01:44:07+01:00,2026-10-16T00:50:11+00:00,Pothole on road/cycleway,Lincolnshire County Council,Outside the Acorns on Long Street: Deep pothole,negative,0.6653,0.3191,0.0156,-0.6497
